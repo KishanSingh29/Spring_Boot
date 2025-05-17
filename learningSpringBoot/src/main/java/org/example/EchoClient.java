@@ -1,8 +1,15 @@
 package org.example;
 
+import java.net.Socket;
+
 public class EchoClient {
     public static void main(String[] args) {
-        System.out.println("hello World");
+        try{
+            System.out.println("Client Started");
+            Socket soc = new Socket("localhost",9806);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
