@@ -41,9 +41,6 @@ public class JournalEntryControllerV2 {
            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
        }
 
-
-
-
     }
     @GetMapping("id/{myId}")
     public ResponseEntity<JournalEntry> getJournalEntryById(@PathVariable ObjectId myId){
