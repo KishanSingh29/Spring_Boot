@@ -1,6 +1,6 @@
 package com.BackendX.journalApp.config;
 
-import com.BackendX.journalApp.Service.UserDetailsServiceImpl;
+import com.BackendX.journalApp.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
@@ -20,6 +20,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
+
 public class SpringSecurity {
     @Autowired
     private UserDetailsServiceImpl userDetailsService;

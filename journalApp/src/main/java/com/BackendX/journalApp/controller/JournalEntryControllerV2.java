@@ -1,7 +1,7 @@
 package com.BackendX.journalApp.controller;
 
-import com.BackendX.journalApp.Service.JournalEntryService;
-import com.BackendX.journalApp.Service.UserService;
+import com.BackendX.journalApp.service.JournalEntryService;
+import com.BackendX.journalApp.service.UserService;
 import com.BackendX.journalApp.entity.JournalEntry;
 import com.BackendX.journalApp.entity.User;
 import org.bson.types.ObjectId;

@@ -1,7 +1,7 @@
 package com.BackendX.journalApp.controller;
 
 
-import com.BackendX.journalApp.Service.UserService;
+import com.BackendX.journalApp.service.UserService;
 import com.BackendX.journalApp.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
