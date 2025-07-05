@@ -2,16 +2,19 @@ package com.BackendX.journalApp.service;
 
 import com.BackendX.journalApp.entity.User;
 import com.BackendX.journalApp.repository.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Component
+@Service
+@Slf4j
 public class UserService {
     @Autowired
     private UserRepository userRepository;
@@ -24,6 +27,7 @@ public class UserService {
            userRepository.save(user);
            return true;
        }catch (Exception e){
+           log.error("Error occured for {} :",user.getUserName(),e);
            return false;
        }
     }

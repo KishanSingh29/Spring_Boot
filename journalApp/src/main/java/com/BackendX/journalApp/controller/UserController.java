@@ -21,14 +21,14 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping
-    public List<User> getAllUsers(){
-        return userService.getAll();
-    }
-    @PostMapping
-    public void createUser(@RequestBody User user){
-        userService.saveNewUser(user);
-    }
+//    @GetMapping
+//    public List<User> getAllUsers(){
+//        return userService.getAll();
+//    }
+//    @PostMapping
+//    public void createUser(@RequestBody User user){
+//        userService.saveNewUser(user);
+//    }
     @PutMapping
     public ResponseEntity<?> updateUser(@RequestBody User user){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -45,6 +45,12 @@ public class UserController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         userRepository.deleteByUserName(authentication.getName());
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping
+    public ResponseEntity<?> greeting(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return new ResponseEntity<>("hii"+ authentication.getName(),HttpStatus.OK);
     }
 
 
